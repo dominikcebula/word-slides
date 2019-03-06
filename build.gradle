@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter"
     compile "org.apache.commons:commons-lang3:3.8.1"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     compile "io.vavr:vavr:0.10.0"
@@ -53,6 +53,6 @@ dependencies {
 
     testCompile "org.spockframework:spock-core:${spockVersion}"
     testCompile "org.spockframework:spock-spring:${spockVersion}"
-    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
     testCompile "net.bytebuddy:byte-buddy:1.8.21"
 }
