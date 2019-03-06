@@ -66,7 +66,7 @@ public class SlidesFinder {
                 .toJavaParallelStream()
                 .map(this::assignValueFromStoreToSentence)
                 .collect(Collectors.toList()))
-                .toMap(this::valuedIndexedSentenceToMapElement)
+                .toLinkedMap(this::valuedIndexedSentenceToMapElement)
                 .toJavaMap();
     }
 
