@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-class SlidesRunner implements ApplicationRunner {
+public class SlidesRunner implements ApplicationRunner {
 
     @Autowired
     private SlidesFinderFacade slidesFinderFacade;
