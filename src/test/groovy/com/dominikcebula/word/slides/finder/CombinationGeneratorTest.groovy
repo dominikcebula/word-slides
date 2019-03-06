@@ -60,8 +60,8 @@ class CombinationGeneratorTest extends Specification {
         ]
     }
 
-    public static final IndexedWord ONE = new IndexedWord("one", 0)
-    public static final IndexedWord TWO = new IndexedWord("two", 1)
-    public static final IndexedWord THREE = new IndexedWord("three", 2)
-    public static final IndexedWord FOUR = new IndexedWord("four", 3)
+    private static final IndexedWord ONE = new IndexedWord("one", 0)
+    private static final IndexedWord TWO = new IndexedWord("two", 1)
+    private static final IndexedWord THREE = new IndexedWord("three", 2)
+    private static final IndexedWord FOUR = new IndexedWord("four", 3)
 }
