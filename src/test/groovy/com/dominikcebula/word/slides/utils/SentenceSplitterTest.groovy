@@ -25,7 +25,7 @@ class SentenceSplitterTest extends Specification {
         def words = SentenceSplitter.splitSentence("one")
 
         then:
-        words == ["one"].toArray()
+        words == ["one"] as String[]
     }
 
     def "should create three words for three word sentence"() {
@@ -33,6 +33,6 @@ class SentenceSplitterTest extends Specification {
         def words = SentenceSplitter.splitSentence("one  two    three")
 
         then:
-        words == ["one", "two", "three"].toArray()
+        words == ["one", "two", "three"] as String[]
     }
 }

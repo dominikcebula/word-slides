@@ -28,7 +28,6 @@ public class SlidesFinder {
     private Store store;
 
     public Map<String, Integer> findSlides(String sentence) {
-
         var allCombinationSentences = getSortedAllSentenceCombinations(sentence);
         var allSentencesExistingInStore = getAllSentencesExistingInStore(allCombinationSentences);
         var allSentencesOptimalAndPossibleForConsumption = getAllSentencesOptimalAndPossibleForConsumption(allSentencesExistingInStore);
