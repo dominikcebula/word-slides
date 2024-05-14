@@ -6,7 +6,7 @@ Goal of this project was to show example usages of vavr library (http://www.vavr
 
 # Tools used
 
-* Java 11
+* Java 21
 * Spring Boot
 * vavr
 * Spock
