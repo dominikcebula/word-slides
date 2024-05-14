@@ -2,7 +2,7 @@
 
 # Into
 
-This repository contains simple "word-slides" algorithm implementation in Java 11 with Tests in Groovy.
+This repository contains simple "word-slides" algorithm implementation in Java 21 with Tests in Groovy.
 
 Goal of this project was to show example usages of vavr library (http://www.vavr.io/) that implements elements of functional programming in Java.
 
