@@ -2,27 +2,17 @@ buildscript {
     ext {
         springBootVersion = "3.2.2"
         lombokVersion = "1.18.30"
-        spockVersion = "2.3-groovy-4.0"
-    }
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        maven {
-            url 'https://plugins.gradle.org/m2/'
-        }
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("com.adarshr:gradle-test-logger-plugin:4.0.0")
+        spockVersion = "2.4-M4-groovy-4.0"
     }
 }
 
-apply plugin: "java"
-apply plugin: "groovy"
-apply plugin: "idea"
-apply plugin: "org.springframework.boot"
-apply plugin: "io.spring.dependency-management"
-apply plugin: "com.adarshr.test-logger"
+plugins {
+    id "java"
+    id "groovy"
+    id "idea"
+    id("org.springframework.boot") version "${springBootVersion}"
+    id("io.spring.dependency-management") version "1.1.5"
+}
 
 bootJar {
 }
@@ -44,6 +34,9 @@ java {
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        url 'https://plugins.gradle.org/m2/'
+    }
 }
 
 dependencies {
@@ -58,8 +51,10 @@ dependencies {
     testImplementation "org.spockframework:spock-spring:${spockVersion}"
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "net.bytebuddy:byte-buddy:1.14.15"
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    testImplementation(platform('org.junit:junit-bom:5.10.2'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testRuntimeOnly('org.junit.platform:junit-platform-launcher')
 
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
