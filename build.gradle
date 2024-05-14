@@ -34,8 +34,12 @@ bootRun {
 
 group = "com.dominikcebula.word.slides"
 version = "1.0-SNAPSHOT"
-sourceCompatibility = "21"
-targetCompatibility = "21"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 repositories {
     mavenLocal()
@@ -54,7 +58,16 @@ dependencies {
     testImplementation "org.spockframework:spock-spring:${spockVersion}"
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "net.bytebuddy:byte-buddy:1.14.15"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "started", "passed", "skipped", "failed"
+    }
 }
