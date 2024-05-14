@@ -1,9 +1,9 @@
 package com.dominikcebula.word.slides.comparators
 
+import io.vavr.collection.List
 import spock.lang.Specification
 
 import static com.dominikcebula.word.slides.ds.IndexedSentence.createIndexedSentence
-import static io.vavr.collection.List.ofAll
 
 class IndexedSentenceComparatorTest extends Specification {
 
@@ -19,7 +19,7 @@ class IndexedSentenceComparatorTest extends Specification {
         ]
 
         when:
-        def sortedSentences = ofAll(sentences).sorted(indexedSentenceComparator)
+        def sortedSentences = List.ofAll(sentences).sorted(indexedSentenceComparator)
 
         then:
         sortedSentences.asJava() == [
