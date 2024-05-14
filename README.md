@@ -1,3 +1,5 @@
+[![CI Pipeline](https://github.com/dominikcebula/word-slides/actions/workflows/gradle.yml/badge.svg)](https://github.com/dominikcebula/word-slides/actions/workflows/gradle.yml)
+
 # Into
 
 This repository contains simple "word-slides" algorithm implementation in Java 11 with Tests in Groovy.
